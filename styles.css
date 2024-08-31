@@ -1,0 +1,237 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "Comic Sans MS", Tahoma, Geneva, Verdana, sans-serif;
+    background: url('img1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content {
+    flex: 1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1em 2em;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background: linear-gradient(135.9deg, rgb(109, 25, 252) 16.4%, rgb(125, 31, 165) 56.1%);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 86px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1001;
+}
+
+.toggle-indicator {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: #000000; 
+}
+
+.light-mode header {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+}
+
+.light-mode nav ul li a {
+    color: #000000;
+}
+
+.light-mode .theme-toggle {
+    background-color: #D3D3D3; 
+}
+
+.light-mode .toggle-indicator {
+    transform: translateX(0);
+}
+
+.light-mode section {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000; 
+}
+
+.light-mode footer {
+    background: rgba(255, 255, 255, 0.9); 
+    color: #000000; 
+    padding: 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.dark-mode {
+    background-color: #ffffff; 
+    color: #ffffff; 
+}
+
+.dark-mode header {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+}
+
+.dark-mode nav ul li a {
+    color: #ffffff;
+}
+
+.dark-mode .theme-toggle {
+    background-color: #ffffff; 
+}
+
+.dark-mode .toggle-indicator {
+    transform: translateX(30px);
+}
+
+.dark-mode section {
+    background: rgba(18, 18, 18, 0.8); 
+    color: #ffffff; 
+}
+
+.dark-mode footer {
+    background: rgba(18, 18, 18, 0.8); 
+    color: #ffffff; 
+    padding: 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Custom Mode */
+.custom-mode {
+    background-color: #CBC3E3; 
+    color: #800080; 
+}
+
+.custom-mode header {
+    background: rgba(203, 195, 227, 0.9);
+    color: #800080;
+}
+
+.custom-mode nav ul li a {
+    color: #800080;
+}
+
+.custom-mode .theme-toggle {
+    background-color: #800080; 
+}
+
+.custom-mode .toggle-indicator {
+    transform: translateX(60px);
+}
+
+.custom-mode section {
+    background: rgba(203, 195, 227, 0.8); 
+    color: #800080; 
+}
+
+.custom-mode footer {
+    background: rgba(203, 195, 227, 0.8);
+    color: #800080;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+.intro {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .theme-toggle {
+        margin-top: 1em;
+    }
+}
